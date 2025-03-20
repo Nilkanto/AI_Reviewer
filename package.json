@@ -1,0 +1,15 @@
+{
+  "name": "ai-reviewer",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node BackEnd/server.js",
+    "server": "nodemon BackEnd/server.js",
+    "client": "npm start --prefix FrontEnd",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm install && npm install --prefix FrontEnd && npm run build --prefix FrontEnd"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
+
