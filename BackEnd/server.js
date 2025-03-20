@@ -1,8 +1,35 @@
-require('dotenv').config()
-const app = require('./src/app')
+require('dotenv').config();
+const app = require('./src/app');
+const port = process.env.PORT || 5000;
+const net = require('net');
 
-app.listen(5000, () => {                 //app.listen starts the server at port 3000 and when the server starts callback function will be executed.
+// Function to check if the port is in use
+const checkPort = (port, callback) => {
+    const server = net.createServer();
+    server.once('error', (err) => {
+        if (err.code === 'EADDRINUSE') {
+            console.log(` Port ${port} is in use. Trying to free it...`);
+            callback(false);
+        } else {
+            callback(true);
+        }
+    });
 
-    console.log("server is running on port 5000");
-})
+    server.once('listening', () => {
+        server.close();
+        callback(true);
+    });
 
+    server.listen(port);
+};
+
+// Attempt to start server only if port is free
+checkPort(port, (isFree) => {
+    if (isFree) {
+        app.listen(port, () => {
+            console.log(`✅ Server is running on port ${port}`);
+        });
+    } else {
+        console.log(`Failed to free port ${port}. Try closing existing processes manually.`);
+    }
+});

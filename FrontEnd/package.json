@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ai-reviewer": "file:..",
     "axios": "^1.7.9",
     "prismjs": "^1.29.0",
     "react": "^19.0.0",
