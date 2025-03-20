@@ -1,0 +1,47 @@
+URL- http://localhost:5000/ai/get-response?prompt=tell about chatgpt
+In React, reusable component means - if we create a component then we can render it again and again.
+
+After creating basic server at files app.js and server.js. Now, we will integrate AI with the application.
+For that go to - ai.google.dev. GOOGLE_GEMINI_KEY=AIzaSyB7lO011DBPvVuTO8jQIs1CO6YUECd0r5k
+Till now we got the KEY. But we want to use it we need to install a package which is - dotenv.
+So, 1st close the server.then install it - npm install dotenv. Then after installation require 
+dotenv at server.js - require('dotenv').config() so that API KEY in .env file can be used.
+Then go to - ai.google.dev.in ,then there click API documentation - copy the code of - Get a Gemini API key and make your first API request in minutes.
+Then in src folder make folder services and in services folder create file ai.service.js and then copy Gemini API code in ai.service.js.
+Then install the package - @google/generative-ai , npm i @google/generative-ai. 
+Then in ai.service.js file - there asking "YOUR API" and at that place write - process.env.GOOGLE_GEMINI_KEY and
+
+npm i react-simple-code-editor in FrontEnd (If we want to make changes and write our code) then will import it.
+npm i axios so that we can connect in FrontEnd FrontEnd with BackEnd.then also import axios - import axios from 'axios'
+npm i cors , you need to install this package in BackEnd. Because BackEnd nevers shares it resources with anybody(FrontEnd).
+So if we want that FrontEnd shares its resources with FrontEnd we need to install - npm i cors. Then require it in app.js file const cors = require("cors"); and also add one more line -app.use(cors()) in that app.js. And then start server in BackEnd using npx nodemon.
+npm i react-markdown in FrontEnd.import Markdown from "react-markdown" in App.jsx then <div className="right">
+                     <Markdown 
+                     rehypePlugins={[rehypeHighlight]}>{review}</Markdown>           
+              </div> 
+npm install rehype-highlight in FrontEnd.import rehypeHighlight from "rehype-highlight";import "highlight.js/styles/github.css" in App.jsx so that we can color the code in output.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+npm i prismjs - if i want to highlight the code then we have to install this package. and
+import in App.jsx
+
+Selector	Meaning
+.code pre	Selects <pre> elements inside .code
+.code .pre	Selects any element with class="pre" inside .code
