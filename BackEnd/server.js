@@ -1,6 +1,6 @@
 require('dotenv').config();
 const app = require('./src/app');
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5005;
 const net = require('net');
 
 // Function to check if the port is in use
