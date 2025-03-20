@@ -2,7 +2,6 @@
   "name": "ai-reviewer",
   "version": "1.0.0",
   "scripts": {
-    
     "start": "node BackEnd/server.js",
     "server": "nodemon BackEnd/server.js",
     "client": "npm start --prefix FrontEnd",
@@ -11,5 +10,8 @@
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
   }
 }
