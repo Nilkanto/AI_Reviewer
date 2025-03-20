@@ -72,3 +72,4 @@ app.listen(5000, () => {                 //app.listen starts the server at port 
     console.log("server is running on port 5000");
 })
 
+"prestart": "fkill :5000 --force",

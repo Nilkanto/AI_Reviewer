@@ -2,7 +2,7 @@
   "name": "ai-reviewer",
   "version": "1.0.0",
   "scripts": {
-    "prestart": "fkill :5000 --force",
+    
     "start": "node BackEnd/server.js",
     "server": "nodemon BackEnd/server.js",
     "client": "npm start --prefix FrontEnd",
